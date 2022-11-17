@@ -18,10 +18,12 @@ module.exports = {
         "no-unused-vars": "off",
         "no-undef": "off",
         "indent": "off",
-        "@typescript-eslint/indent": "off",
         "multiline-ternary": "off",
         ...(TS
-          ? { "@typescript-eslint/no-unused-vars": "off" }
+          ? {
+              "@typescript-eslint/no-unused-vars": "off",
+              "@typescript-eslint/indent": "off"
+            }
           : null)
       }
     }
