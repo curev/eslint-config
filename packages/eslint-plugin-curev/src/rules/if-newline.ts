@@ -1,8 +1,8 @@
-import { createEslintRule } from "../utils"
+import { createEslintRule } from "../utils";
 
-export const RULE_NAME = "if-newline"
-export type MessageIds = "missingIfNewline"
-export type Options = []
+export const RULE_NAME = "if-newline";
+export type MessageIds = "missingIfNewline";
+export type Options = [];
 
 export default createEslintRule<Options, MessageIds>({
   name: RULE_NAME,
@@ -10,38 +10,38 @@ export default createEslintRule<Options, MessageIds>({
     type: "problem",
     docs: {
       description: "Newline after if",
-      recommended: "error",
+      recommended: "error"
     },
     fixable: "code",
     schema: [],
     messages: {
-      missingIfNewline: "Expect newline after if",
-    },
+      missingIfNewline: "Expect newline after if"
+    }
   },
   defaultOptions: [],
   create: (context) => {
     return {
       IfStatement(node) {
         if (!node.consequent) {
-          return
+          return;
         }
         if (node.consequent.type === "BlockStatement") {
-          return
+          return;
         }
         if (node.test.loc.end.line === node.consequent.loc.start.line) {
           context.report({
             node,
             loc: {
               start: node.test.loc.end,
-              end: node.consequent.loc.start,
+              end: node.consequent.loc.start
             },
             messageId: "missingIfNewline",
             fix(fixer) {
-              return fixer.replaceTextRange([node.consequent.range[0], node.consequent.range[0]], "\n")
-            },
-          })
+              return fixer.replaceTextRange([node.consequent.range[0], node.consequent.range[0]], "\n");
+            }
+          });
         }
-      },
-    }
-  },
-})
+      }
+    };
+  }
+});

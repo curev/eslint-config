@@ -1,15 +1,15 @@
-const basic = require("@curev/eslint-config-basic")
+const basic = require("@curev/eslint-config-basic");
 
 module.exports = {
   extends: [
     "@curev/eslint-config-basic",
     "plugin:import/typescript",
-    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   settings: {
     "import/resolver": {
-      node: { extensions: [".js", ".jsx", ".mjs", ".ts", ".tsx", ".d.ts"] },
-    },
+      node: { extensions: [".js", ".jsx", ".mjs", ".ts", ".tsx", ".d.ts"] }
+    }
   },
   overrides: basic.overrides,
   rules: {
@@ -60,9 +60,9 @@ module.exports = {
         "TSTypeParameterInstantiation",
         "FunctionExpression > .params[decorators.length > 0]",
         "FunctionExpression > .params > :matches(Decorator, :not(:first-child))",
-        "ClassBody.body > PropertyDefinition[decorators.length > 0] > .key",
+        "ClassBody.body > PropertyDefinition[decorators.length > 0] > .key"
       ],
-      offsetTernaryExpressions: true,
+      offsetTernaryExpressions: true
     }],
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
@@ -71,13 +71,13 @@ module.exports = {
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error", { functions: false, classes: false, variables: true }],
     "brace-style": "off",
-    "@typescript-eslint/brace-style": ["error", "stroustrup", { allowSingleLine: true }],
+    "@typescript-eslint/brace-style": ["error", "1tbs", { allowSingleLine: true }],
     "comma-dangle": "off",
-    "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
+    "@typescript-eslint/comma-dangle": ["error", "never"],
     "object-curly-spacing": "off",
     "@typescript-eslint/object-curly-spacing": ["error", "always"],
     "semi": "off",
-    "@typescript-eslint/semi": ["error", "never"],
+    "@typescript-eslint/semi": ["error", "always"],
     "quotes": "off",
     "@typescript-eslint/quotes": ["error", "double"],
     "space-before-blocks": "off",
@@ -88,8 +88,8 @@ module.exports = {
       {
         anonymous: "always",
         named: "never",
-        asyncArrow: "always",
-      },
+        asyncArrow: "always"
+      }
     ],
     "space-infix-ops": "off",
     "@typescript-eslint/space-infix-ops": "error",
@@ -134,6 +134,6 @@ module.exports = {
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/no-namespace": "off",
-    "@typescript-eslint/triple-slash-reference": "off",
-  },
-}
+    "@typescript-eslint/triple-slash-reference": "off"
+  }
+};
