@@ -15,13 +15,11 @@ module.exports = {
         parser: "@typescript-eslint/parser"
       },
       rules: {
-        "no-unused-vars": "off",
         "no-undef": "off",
         "indent": "off",
         "multiline-ternary": "off",
         ...(TS
           ? {
-              "@typescript-eslint/no-unused-vars": "off",
               "@typescript-eslint/indent": "off"
             }
           : null)

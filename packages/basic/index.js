@@ -35,6 +35,7 @@ module.exports = {
     "html",
     "unicorn",
     "curev",
+    "unused-imports",
     "no-only-tests"
   ],
   settings: {
@@ -191,7 +192,6 @@ module.exports = {
     "curly": ["error", "all"],
     "quotes": ["error", "double"],
     "quote-props": ["error", "consistent-as-needed"],
-    "no-unused-vars": "warn",
     "no-param-reassign": "off",
     "array-bracket-spacing": ["error", "never"],
     "brace-style": ["error", "1tbs", { allowSingleLine: true }],
@@ -309,7 +309,12 @@ module.exports = {
     "unicorn/prefer-type-error": "error",
     // Use new when throwing error
     "unicorn/throw-new-error": "error",
-
+    "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      { vars: "all", varsIgnorePattern: "^_", args: "after-used", argsIgnorePattern: "^_" }
+    ],
     "no-use-before-define": ["error", { functions: false, classes: false, variables: true }],
     "eslint-comments/disable-enable-pair": "off",
     "import/no-named-as-default-member": "off",
