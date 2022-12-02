@@ -312,7 +312,7 @@ module.exports = {
     "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
-      "warn",
+      "error",
       { vars: "all", varsIgnorePattern: "^_", args: "after-used", argsIgnorePattern: "^_" }
     ],
     "no-use-before-define": ["error", { functions: false, classes: false, variables: true }],
