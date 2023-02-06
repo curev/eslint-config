@@ -14,6 +14,7 @@ module.exports = {
   overrides: basic.overrides,
   rules: {
     "import/named": "off",
+    "semi": "off",
 
     // TS
     "@typescript-eslint/ban-ts-comment": ["error", { "ts-ignore": "allow-with-description" }],
@@ -65,7 +66,7 @@ module.exports = {
       offsetTernaryExpressions: true
     }],
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+    "@typescript-eslint/no-unused-vars": "off",
     "no-redeclare": "off",
     "@typescript-eslint/no-redeclare": "error",
     "no-use-before-define": "off",
@@ -76,7 +77,6 @@ module.exports = {
     "@typescript-eslint/comma-dangle": ["error", "never"],
     "object-curly-spacing": "off",
     "@typescript-eslint/object-curly-spacing": ["error", "always"],
-    "semi": "off",
     "@typescript-eslint/semi": ["error", "always"],
     "quotes": "off",
     "@typescript-eslint/quotes": ["error", "double"],
