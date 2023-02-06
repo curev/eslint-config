@@ -257,8 +257,8 @@ module.exports = {
     "generator-star-spacing": "off",
     "spaced-comment": ["error", "always", {
       line: {
-        markers: ["/"],
-        exceptions: ["/", "#"]
+        markers: ["/", "#region", "#endregion", "region", "endregion"],
+        exceptions: ["/"]
       },
       block: {
         markers: ["!"],

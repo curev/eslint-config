@@ -12,14 +12,3 @@ export default {
   }
 };
 
-const a = { b: "1" };
-
-switch (a.b) {
-  case "1":
-    break;
-}
-
-if (a.b) {
-  a.b = "2";
-}
-
