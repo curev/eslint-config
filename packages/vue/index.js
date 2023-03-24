@@ -15,7 +15,14 @@ module.exports = {
         parser: "@typescript-eslint/parser"
       },
       rules: {
-        "multiline-ternary": "off"
+        "no-undef": "off",
+        "indent": "off",
+        "multiline-ternary": "off",
+        ...(TS
+          ? {
+              "@typescript-eslint/indent": "off"
+            }
+          : null)
       }
     }
   ],
