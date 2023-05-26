@@ -2,7 +2,8 @@
   "name": "@curev/eslint-config-vue",
   "version": "0.0.9",
   "description": "",
-  "author": "Anthony Fu <anthonyfu117@hotmail.com> (https://github.com/antfu/)",
+  "author": "Chizuki<chizukicn@outlook.com> (https://github.com/chizukicn/)",
+  "homepage": "https://github.com/chizukicn/eslint-config",
   "license": "MIT",
   "keywords": [
     "eslint-config"

@@ -2,9 +2,9 @@
   "name": "@curev/eslint-config-react",
   "version": "0.0.9",
   "description": "",
-  "author": "Anthony Fu <anthonyfu117@hotmail.com> (https://github.com/antfu/)",
+  "author": "Chizuki<chizukicn@outlook.com> (https://github.com/chizukicn/)",
   "license": "MIT",
-  "homepage": "https://github.com/antfu/eslint-config",
+  "homepage": "https://github.com/chizukicn/eslint-config",
   "keywords": [
     "eslint-config"
   ],
