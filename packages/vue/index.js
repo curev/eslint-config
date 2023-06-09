@@ -2,6 +2,8 @@ const { isPackageExists } = require("local-pkg");
 
 const TS = isPackageExists("typescript");
 
+const isVue3 = isPackageExists("vue@3");
+
 if (!TS) {
   console.warn("[@curev/eslint-config] TypeScript is not installed, fallback to JS only.");
 }
@@ -27,7 +29,9 @@ module.exports = {
     }
   ],
   extends: [
-    "plugin:vue/vue3-recommended",
+    isVue3
+      ? "plugin:vue/vue3-recommended"
+      : "plugin:vue/recommended",
     TS
       ? "@curev/eslint-config-ts"
       : "@curev/eslint-config-basic"
@@ -50,7 +54,7 @@ module.exports = {
       singleline: "always",
       multiline: "always"
     }],
-    "vue/component-name-in-template-casing": ["error", "PascalCase"],
+    "vue/component-name-in-template-casing": ["warn", "PascalCase"],
     "vue/component-options-name-casing": ["error", "PascalCase"],
     "vue/custom-event-name-casing": ["error", "camelCase"],
     "vue/define-macros-order": ["error", {
@@ -112,7 +116,6 @@ module.exports = {
     "vue/script-indent": ["error", 2, { baseIndent: 1, switchCase: 1 }],
     "vue/order-in-components": "warn",
     "vue/no-deprecated-v-bind-sync": "warn",
-    "vue/component-name-in-template-casing": "warn",
     "vue/require-explicit-emits": "warn"
   }
 };

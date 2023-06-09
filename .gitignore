@@ -79,4 +79,4 @@ dist
 
 *.lerna_backup
 
-DS_Store
+.DS_Store

@@ -13,11 +13,11 @@
     "bump": "bumpp package.json packages/*/package.json --commit --push --tag"
   },
   "devDependencies": {
-    "@curev/eslint-config": "*",
+    "@curev/eslint-config": "workspace:*",
     "bumpp": "^8.2.1",
-    "eslint": "^8.36.0",
+    "eslint": "^8.42.0",
     "eslint-plugin-curev": "workspace:*",
     "rimraf": "^3.0.2",
-    "typescript": "^5.0.2"
+    "typescript": "^5.1.3"
   }
 }
