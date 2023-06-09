@@ -1,6 +1,6 @@
 {
   "name": "@curev/eslint-config-monorepo",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "private": true,
   "packageManager": "pnpm@7.30.0",
   "author": "Chizuki<chizukicn@outlook.com> (https://github.com/chizukicn/)",
