@@ -1,6 +1,6 @@
-# @antfu/eslint-config
+# @curev/eslint-config
 
-[![npm](https://img.shields.io/npm/v/@antfu/eslint-config?color=a1b858&label=)](https://npmjs.com/package/@antfu/eslint-config)
+[![npm](https://img.shields.io/npm/v/@curev/eslint-config?color=a1b858&label=)](https://npmjs.com/package/@curev/eslint-config)
 
 - Single quotes, no semi
 - Auto fix for formatting (aimed to be used standalone without Prettier)
@@ -14,14 +14,14 @@
 ### Install
 
 ```bash
-pnpm add -D eslint @antfu/eslint-config
+pnpm add -D eslint @curev/eslint-config
 ```
 
 ### Config `.eslintrc`
 
 ```json
 {
-  "extends": "@antfu"
+  "extends": "@curev"
 }
 ```
 
