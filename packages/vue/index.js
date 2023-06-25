@@ -2,7 +2,7 @@ const { isPackageExists } = require("local-pkg");
 
 const TS = isPackageExists("typescript");
 
-const isVue3 = isPackageExists("vue@3");
+const isVue2 = isPackageExists("vue@2");
 
 if (!TS) {
   console.warn("[@curev/eslint-config] TypeScript is not installed, fallback to JS only.");
@@ -29,9 +29,9 @@ module.exports = {
     }
   ],
   extends: [
-    isVue3
-      ? "plugin:vue/vue3-recommended"
-      : "plugin:vue/recommended",
+    isVue2
+      ? "plugin:vue/recommended"
+      : "plugin:vue/vue3-recommended",
     TS
       ? "@curev/eslint-config-ts"
       : "@curev/eslint-config-basic"
