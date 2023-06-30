@@ -2,22 +2,31 @@
   "name": "@curev/eslint-config-monorepo",
   "version": "0.0.12",
   "private": true,
-  "packageManager": "pnpm@7.30.0",
+  "packageManager": "pnpm@8.6.5",
   "author": "Chizuki<chizukicn@outlook.com> (https://github.com/chizukicn/)",
-  "homepage": "https://github.com/chizukicn/eslint-config",
   "license": "MIT",
+  "homepage": "https://github.com/chizukicn/eslint-config",
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint --cache .",
     "test": "pnpm -r run test",
-    "prepare": "pnpm -r run stub",
+    "prepare": "pnpm -r run stub && pnpm simple-git-hooks",
     "bump": "bumpp package.json packages/*/package.json --commit --push --tag"
   },
   "devDependencies": {
     "@curev/eslint-config": "workspace:*",
+    "@curev/eslint-plugin": "workspace:*",
     "bumpp": "^8.2.1",
     "eslint": "^8.42.0",
-    "eslint-plugin-curev": "workspace:*",
+    "lint-staged": "^13.2.3",
     "rimraf": "^3.0.2",
     "typescript": "^5.1.3"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*.{jsx,js,vue,ts,tsx}": [
+      "eslint --cache --fix"
+    ]
   }
 }

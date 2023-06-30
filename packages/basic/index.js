@@ -34,7 +34,8 @@ module.exports = {
   plugins: [
     "html",
     "unicorn",
-    "curev",
+    "@curev",
+    "@unocss",
     "unused-imports",
     "no-only-tests"
   ],
@@ -160,6 +161,14 @@ module.exports = {
         "no-only-tests/no-only-tests": "error"
       }
     },
+
+    {
+      files: ["*.test.ts", "*.test.js", "*.spec.ts", "*.spec.js"],
+      rules: {
+        "no-unused-expressions": "off",
+        "no-only-tests/no-only-tests": "error"
+      }
+    },
     {
       // Code blocks in markdown file
       files: ["**/*.md/*.*"],
@@ -175,7 +184,9 @@ module.exports = {
         "no-restricted-imports": "off",
         "no-undef": "off",
         "no-unused-expressions": "off",
-        "no-unused-vars": "off"
+        "no-unused-vars": "off",
+        "unused-imports/no-unused-imports": "off",
+        "unused-imports/no-unused-vars": "off"
       }
     }
   ],
@@ -224,6 +235,7 @@ module.exports = {
       }
     ],
     "no-multiple-empty-lines": ["error", { max: 1, maxBOF: 0, maxEOF: 1 }],
+    "max-statements-per-line": "off",
 
     // es6
     "no-var": "error",
@@ -284,7 +296,6 @@ module.exports = {
     "require-await": "off",
     "no-return-assign": "off",
     "operator-linebreak": ["error", "before"],
-    "max-statements-per-line": ["error", { max: 1 }],
 
     // unicorns
     // Pass error message when throwing errors
@@ -337,9 +348,10 @@ module.exports = {
     "yml/quotes": ["error", { prefer: "single", avoidEscape: false }],
     "yml/no-empty-document": "off",
 
-    // antfu
-    "curev/if-newline": "error",
-    "curev/import-dedupe": "error"
-    // 'antfu/prefer-inline-type-import': 'error',
+    // curev
+    "@curev/if-newline": "error",
+    "@curev/import-dedupe": "error",
+    "@curev/max-statements-per-line": "error"
+    // 'curev/prefer-inline-type-import': 'error',
   }
 };

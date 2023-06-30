@@ -1,8 +1,8 @@
 {
-  "name": "eslint-plugin-curev",
+  "name": "@curev/eslint-plugin",
   "version": "0.0.12",
-  "license": "MIT",
   "author": "Chizuki<chizukicn@outlook.com> (https://github.com/chizukicn/)",
+  "license": "MIT",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",

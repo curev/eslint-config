@@ -3,8 +3,8 @@
   "version": "0.0.12",
   "description": "",
   "author": "Chizuki<chizukicn@outlook.com> (https://github.com/chizukicn/)",
-  "homepage": "https://github.com/chizukicn/eslint-config",
   "license": "MIT",
+  "homepage": "https://github.com/chizukicn/eslint-config",
   "keywords": [
     "eslint-config"
   ],

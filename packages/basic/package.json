@@ -19,7 +19,8 @@
     "eslint": ">=8.40.0"
   },
   "dependencies": {
-    "eslint-plugin-curev": "workspace:*",
+    "@curev/eslint-plugin": "workspace:*",
+    "@unocss/eslint-plugin": "^0.53.4",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-html": "^7.1.0",
     "eslint-plugin-import": "^2.26.0",

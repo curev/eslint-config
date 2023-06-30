@@ -107,7 +107,7 @@ module.exports = {
     "@typescript-eslint/lines-between-class-members": ["error", "always", { exceptAfterSingleLine: true }],
 
     // curev
-    "curev/generic-spacing": "error",
+    "@curev/generic-spacing": "error",
 
     // The following rule overrides require a parser service, aka. require a `typescript.json` path.
     // This needs to be done individually for each project, and it slows down linting significantly.
