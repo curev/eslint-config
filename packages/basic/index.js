@@ -11,7 +11,9 @@ module.exports = {
     "plugin:eslint-comments/recommended",
     "plugin:jsonc/recommended-with-jsonc",
     "plugin:yml/standard",
-    "plugin:markdown/recommended"
+    "plugin:markdown/recommended",
+    "plugin:@unocss/recommended",
+    "plugin:@curev/recommended"
   ],
   ignorePatterns: [
     "*.min.*",
@@ -34,8 +36,6 @@ module.exports = {
   plugins: [
     "html",
     "unicorn",
-    "@curev",
-    "@unocss",
     "unused-imports",
     "no-only-tests"
   ],
@@ -346,12 +346,6 @@ module.exports = {
 
     // yml
     "yml/quotes": ["error", { prefer: "single", avoidEscape: false }],
-    "yml/no-empty-document": "off",
-
-    // curev
-    "@curev/if-newline": "error",
-    "@curev/import-dedupe": "error",
-    "@curev/max-statements-per-line": "error"
-    // 'curev/prefer-inline-type-import': 'error',
+    "yml/no-empty-document": "off"
   }
 };

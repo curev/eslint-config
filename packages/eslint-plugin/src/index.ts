@@ -13,7 +13,7 @@ export default {
     "max-statements-per-line": maxStatementsPerLine
   },
   configs: {
-    recommends: {
+    recommended: {
       plugins: ["@curev"],
       rules: {
         "@curev/if-newline": "error",
