@@ -12,7 +12,6 @@ module.exports = {
     "plugin:jsonc/recommended-with-jsonc",
     "plugin:yml/standard",
     "plugin:markdown/recommended",
-    "plugin:@unocss/recommended",
     "plugin:@curev/recommended"
   ],
   ignorePatterns: [

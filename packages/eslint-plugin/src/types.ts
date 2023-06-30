@@ -1,4 +1,4 @@
-import type { TSESTree } from "@typescript-eslint/utils";
+import { type TSESTree } from "@typescript-eslint/types";
 
 export type ASTNode = TSESTree.Node & {
   alternate?: TSESTree.Node

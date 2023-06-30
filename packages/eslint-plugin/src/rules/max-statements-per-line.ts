@@ -1,4 +1,4 @@
-import type { ASTNode, ASTToken } from "../types";
+import { type ASTNode, type ASTToken } from "../types";
 import { createEslintRule } from "../utils";
 
 export default createEslintRule({
@@ -60,9 +60,8 @@ export default createEslintRule({
             statements: numberOfStatementsOnThisLine === 1 ? "statement" : "statements"
           },
           fix(fixer) {
-            const token = sourceCode.getTokenBefore(firstExtraStatement);
-            const range: [number, number] = [token.range[1], firstExtraStatement.range[0]];
-            return fixer.replaceTextRange(range, "\n");
+            const lastToken = getActualLastToken(firstExtraStatement);
+            return fixer.insertTextAfter(lastToken, "\n");
           }
         });
       }
