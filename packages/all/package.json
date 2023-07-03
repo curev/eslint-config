@@ -1,6 +1,6 @@
 {
   "name": "@curev/eslint-config",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Chizuki's ESLint config",
   "author": "Chizuki<chizukicn@outlook.com> (https://github.com/chizukicn/)",
   "license": "MIT",
