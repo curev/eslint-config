@@ -1,8 +1,9 @@
-const { isPackageExists } = require("local-pkg");
+const { isPackageExists, getPackageInfoSync } = require("local-pkg");
 
 const TS = isPackageExists("typescript");
 
-const isVue2 = isPackageExists("vue@2");
+const isVue2 = getPackageInfoSync("vue")?.version?.startsWith("2");
+
 
 if (!TS) {
   console.warn("[@curev/eslint-config] TypeScript is not installed, fallback to JS only.");
