@@ -9,8 +9,7 @@
       async function toggleLocales() {
         // change to some real logic
         const locales = availableLocales;
-        const newLocale
-          = locales[(locales.indexOf(locale.value) + 1) % locales.length];
+        const newLocale = locales[(locales.indexOf(locale.value) + 1) % locales.length];
         await loadLanguageAsync(newLocale);
         locale.value = newLocale;
       }
@@ -29,6 +28,9 @@
             <a icon-btn title={t("button.toggle_langs")} onClick={toggleLocales}>
               <div i-carbon-language />
             </a>
+            {
+                t("button.toggle_langs")
+     }
 
             <RouterLink
               icon-btn

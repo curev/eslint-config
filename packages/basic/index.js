@@ -195,14 +195,67 @@ module.exports = {
         "react/jsx-indent": ["error", 2],
         "react/jsx-indent-props": ["error", 2],
         "react/jsx-closing-bracket-location": ["error", "line-aligned"],
-        "react/jsx-curly-spacing": ["error", { when: "never", children: true }],
-        "react/jsx-curly-brace-presence": ["error", { props: "never", children: "never" }],
-        "react/jsx-curly-newline": ["error", { multiline: "consistent", singleline: "consistent" }],
+        "react/jsx-closing-tag-location": ["error"],
+        "react/jsx-curly-spacing": ["error", {
+          when: "never",
+          children: true,
+          attributes: {
+            allowMultiline: false
+          },
+          spacing: { objectLiterals: "never" }
+        }],
+        "react/jsx-curly-brace-presence": [
+          "error",
+          {
+            props: "never",
+            children: "never"
+          }
+        ],
+        "react/jsx-curly-newline": [
+          "error",
+          {
+            multiline: "consistent",
+            singleline: "consistent"
+          }
+        ],
         "react/jsx-boolean-value": ["error", "never"],
         "react/jsx-equals-spacing": ["error", "never"],
-        "react/jsx-sort-props": ["error", { callbacksLast: true }],
-        "react/jsx-space-before-closing": ["error", "always"],
-        "react/jsx-max-props-per-line": ["error", { maximum: 1, when: "multiline" }]
+        "react/jsx-sort-props": [
+          "error", {
+            callbacksLast: true
+          }
+        ],
+        "react/jsx-tag-spacing": [
+          "error",
+          {
+            closingSlash: "never",
+            beforeSelfClosing: "always",
+            afterOpening: "never",
+            beforeClosing: "never"
+          }
+        ],
+        "react/jsx-max-props-per-line": [
+          "error", {
+            maximum: 1,
+            when: "multiline"
+          }
+        ],
+        "react/jsx-wrap-multilines": [
+          "error",
+          {
+            declaration: "parens-new-line",
+            assignment: "parens-new-line",
+            return: "parens-new-line",
+            arrow: "parens-new-line",
+            condition: "parens-new-line",
+            logical: "parens-new-line",
+            prop: "parens-new-line"
+          }
+        ],
+        "react/jsx-one-expression-per-line": [
+          "error",
+          { allow: "single-child" }
+        ]
       }
     }
   ],
@@ -223,7 +276,6 @@ module.exports = {
     "array-bracket-spacing": ["error", "never"],
     "brace-style": ["error", "1tbs", { allowSingleLine: true }],
     "block-spacing": ["error", "always"],
-    "camelcase": "off",
     "comma-spacing": ["error", { before: false, after: true }],
     "comma-style": ["error", "last"],
     "comma-dangle": ["error", "never"],
@@ -231,7 +283,7 @@ module.exports = {
     "no-debugger": "error",
     "no-console": ["error", { allow: ["warn", "error"] }],
     "no-cond-assign": ["error", "always"],
-    "func-call-spacing": ["off", "never"],
+    "func-call-spacing": ["error", "never"],
     "key-spacing": ["error", { beforeColon: false, afterColon: true }],
     "indent": ["error", 2, { SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1 }],
     "no-restricted-syntax": [
