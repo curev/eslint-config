@@ -1,6 +1,6 @@
 {
   "name": "@curev/eslint-plugin",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "author": "Chizuki<chizukicn@outlook.com> (https://github.com/chizukicn/)",
   "license": "MIT",
   "main": "./dist/index.cjs",
