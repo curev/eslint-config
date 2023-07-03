@@ -36,7 +36,8 @@ module.exports = {
     "html",
     "unicorn",
     "unused-imports",
-    "no-only-tests"
+    "no-only-tests",
+    "react"
   ],
   settings: {
     "import/resolver": {
@@ -186,6 +187,22 @@ module.exports = {
         "no-unused-vars": "off",
         "unused-imports/no-unused-imports": "off",
         "unused-imports/no-unused-vars": "off"
+      }
+    },
+    {
+      files: ["**/*.vue", "**/*.jsx", "**/*.tsx"],
+      rules: {
+        "react/jsx-indent": ["error", 2],
+        "react/jsx-indent-props": ["error", 2],
+        "react/jsx-closing-bracket-location": ["error", "line-aligned"],
+        "react/jsx-curly-spacing": ["error", { when: "never", children: true }],
+        "react/jsx-curly-brace-presence": ["error", { props: "never", children: "never" }],
+        "react/jsx-curly-newline": ["error", { multiline: "consistent", singleline: "consistent" }],
+        "react/jsx-boolean-value": ["error", "never"],
+        "react/jsx-equals-spacing": ["error", "never"],
+        "react/jsx-sort-props": ["error", { callbacksLast: true }],
+        "react/jsx-space-before-closing": ["error", "always"],
+        "react/jsx-max-props-per-line": ["error", { maximum: 1, when: "multiline" }]
       }
     }
   ],
@@ -346,5 +363,6 @@ module.exports = {
     // yml
     "yml/quotes": ["error", { prefer: "single", avoidEscape: false }],
     "yml/no-empty-document": "off"
+
   }
 };
