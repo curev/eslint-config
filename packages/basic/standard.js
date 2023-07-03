@@ -129,7 +129,6 @@ module.exports = {
     "no-mixed-spaces-and-tabs": "error",
     "no-multi-spaces": "error",
     "no-multi-str": "error",
-    "no-multiple-empty-lines": ["error", { max: 1, maxEOF: 0 }],
     "no-new": "error",
     "no-new-func": "error",
     "no-new-object": "error",
@@ -151,7 +150,19 @@ module.exports = {
     "no-template-curly-in-string": "error",
     "no-this-before-super": "error",
     "no-throw-literal": "error",
-    "no-trailing-spaces": "error",
+    "no-trailing-spaces": [
+      "error", {
+        skipBlankLines: true
+      }
+    ],
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        max: 3,
+        maxBOF: 0,
+        maxEOF: 1
+      }
+    ],
     "no-undef": "error",
     "no-undef-init": "error",
     "no-unexpected-multiline": "error",

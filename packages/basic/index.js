@@ -302,7 +302,6 @@ module.exports = {
         asyncArrow: "always"
       }
     ],
-    "no-multiple-empty-lines": ["error", { max: 1, maxBOF: 0, maxEOF: 1 }],
     "max-statements-per-line": "off",
 
     // es6
@@ -366,6 +365,10 @@ module.exports = {
     "operator-linebreak": ["error", "before"],
 
     // unicorns
+
+
+    "unicorn/better-regex": "error",
+
     // Pass error message when throwing errors
     "unicorn/error-message": "error",
     // Uppercase regex escapes
@@ -374,6 +377,9 @@ module.exports = {
     "unicorn/no-instanceof-array": "error",
     // Prevent deprecated `new Buffer()`
     "unicorn/no-new-buffer": "error",
+
+    "unicorn/no-array-for-each": "error",
+
     // Keep regex literals safe!
     "unicorn/no-unsafe-regex": "off",
     // Lowercase number formatting for octal, hex, binary (0x1'error' instead of 0X1'error')
@@ -386,8 +392,61 @@ module.exports = {
     "unicorn/prefer-text-content": "error",
     // Enforce throwing type error when throwing error while checking typeof
     "unicorn/prefer-type-error": "error",
+
+    "unicorn/prefer-node-protocol": "error",
+
+    "unicorn/prefer-spread": "error",
+
+    "unicorn/prefer-trim-start-end": "error",
+
+    "unicorn/prefer-ternary": "error",
+
+    "unicorn/prefer-switch": "error",
+
+    "unicorn/prefer-string-slice": "error",
+
+    "unicorn/prefer-query-selector": "error",
+
+    "unicorn/prefer-object-from-entries": "error",
+
+    "unicorn/prefer-number-properties": "error",
+
+    "unicorn/prefer-modern-dom-apis": "error",
+
+    "unicorn/prefer-modern-math-apis": "error",
+
+    "unicorn/prefer-code-point": "error",
+
+    "unicorn/prefer-at": "error",
+
+    "unicorn/prefer-array-some": "error",
+
+    "unicorn/prefer-array-find": "error",
+
+    "unicorn/prefer-array-flat": "error",
+
+    "unicorn/prefer-array-flat-map": "error",
+
+
+    "unicorn/prefer-math-trunc": "error",
+
+    "unicorn/prefer-logical-operator-over-ternary": "error",
+
+    "unicorn/template-indent": "error",
+
+    "unicorn/require-number-to-fixed-digits-argument": "error",
+
+    "unicorn/require-array-join-separator": "error",
+
+
     // Use new when throwing error
     "unicorn/throw-new-error": "error",
+
+    "unicorn/no-array-push-push": "error",
+
+    "unicorn/no-lonely-if": "error",
+
+
     "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
