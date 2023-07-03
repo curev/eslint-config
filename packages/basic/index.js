@@ -378,8 +378,6 @@ module.exports = {
     // Prevent deprecated `new Buffer()`
     "unicorn/no-new-buffer": "error",
 
-    "unicorn/no-array-for-each": "error",
-
     // Keep regex literals safe!
     "unicorn/no-unsafe-regex": "off",
     // Lowercase number formatting for octal, hex, binary (0x1'error' instead of 0X1'error')
@@ -430,7 +428,7 @@ module.exports = {
 
     "unicorn/prefer-math-trunc": "error",
 
-    "unicorn/prefer-logical-operator-over-ternary": "error",
+    "unicorn/prefer-logical-operator-over-ternary": "warn",
 
     "unicorn/template-indent": "error",
 
