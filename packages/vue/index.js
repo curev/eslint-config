@@ -20,12 +20,8 @@ module.exports = {
       rules: {
         "no-undef": "off",
         "indent": "off",
-        "multiline-ternary": "off"
-        // ...(TS
-        //   ? {
-        //       "@typescript-eslint/indent": "off"
-        //     }
-        //   : null)
+        "multiline-ternary": "off",
+        "vue/script-indent": "off"
       }
     }
   ],
