@@ -20,7 +20,7 @@ type Foo<
   `interface Log {
   <T>(name: T): void
 }`,
-`interface Foo {
+  `interface Foo {
   foo?: <T>(name: T) => void
 }`
 ];

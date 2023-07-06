@@ -20,12 +20,12 @@ module.exports = {
       rules: {
         "no-undef": "off",
         "indent": "off",
-        "multiline-ternary": "off",
-        ...(TS
-          ? {
-              "@typescript-eslint/indent": "off"
-            }
-          : null)
+        "multiline-ternary": "off"
+        // ...(TS
+        //   ? {
+        //       "@typescript-eslint/indent": "off"
+        //     }
+        //   : null)
       }
     }
   ],
@@ -114,7 +114,15 @@ module.exports = {
     "vue/space-infix-ops": "error",
     "vue/space-unary-ops": ["error", { words: true, nonwords: false }],
     "vue/template-curly-spacing": "error",
-    "vue/script-indent": ["error", 2, { baseIndent: 1, switchCase: 1 }],
+    // "vue/script-indent": [
+    //   "error",
+    //   2,
+    //   {
+    //     baseIndent: 1,
+    //     switchCase: 1,
+    //     ignores: []
+    //   }
+    // ],
     "vue/order-in-components": "warn",
     "vue/no-deprecated-v-bind-sync": "warn",
     "vue/require-explicit-emits": "warn"

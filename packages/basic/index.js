@@ -192,8 +192,21 @@ module.exports = {
     {
       files: ["**/*.vue", "**/*.jsx", "**/*.tsx"],
       rules: {
-        "react/jsx-indent": ["error", 2],
-        "react/jsx-indent-props": ["error", 2],
+        "react/jsx-indent": [
+          "error",
+          2,
+          {
+            checkAttributes: true,
+            indentLogicalExpressions: true
+          }
+        ],
+        "react/jsx-indent-props": [
+          "error",
+          {
+            ignoreTernaryOperator: true,
+            indentMode: 2
+          }
+        ],
         "react/jsx-closing-bracket-location": ["error", "line-aligned"],
         "react/jsx-closing-tag-location": ["error"],
         "react/jsx-curly-spacing": ["error", {
