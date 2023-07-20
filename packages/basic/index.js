@@ -391,8 +391,6 @@ module.exports = {
 
     "unicorn/prefer-node-protocol": "error",
 
-    "unicorn/prefer-spread": "error",
-
     "unicorn/prefer-trim-start-end": "error",
 
     "unicorn/prefer-ternary": "error",
@@ -415,15 +413,6 @@ module.exports = {
 
     "unicorn/prefer-at": "error",
 
-    "unicorn/prefer-array-some": "error",
-
-    "unicorn/prefer-array-find": "error",
-
-    "unicorn/prefer-array-flat": "error",
-
-    "unicorn/prefer-array-flat-map": "error",
-
-
     "unicorn/prefer-math-trunc": "error",
 
     "unicorn/prefer-logical-operator-over-ternary": "warn",
@@ -431,9 +420,6 @@ module.exports = {
     "unicorn/template-indent": "error",
 
     "unicorn/require-number-to-fixed-digits-argument": "error",
-
-    "unicorn/require-array-join-separator": "error",
-
 
     // Use new when throwing error
     "unicorn/throw-new-error": "error",
