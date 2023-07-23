@@ -36,8 +36,7 @@ module.exports = {
     "html",
     "unicorn",
     "unused-imports",
-    "no-only-tests",
-    "react"
+    "no-only-tests"
   ],
   settings: {
     "import/resolver": {
@@ -187,73 +186,6 @@ module.exports = {
         "no-unused-vars": "off",
         "unused-imports/no-unused-imports": "off",
         "unused-imports/no-unused-vars": "off"
-      }
-    },
-    {
-      files: ["**/*.vue", "**/*.jsx", "**/*.tsx"],
-      rules: {
-        "react/jsx-closing-bracket-location": ["error", "line-aligned"],
-        "react/jsx-closing-tag-location": ["error"],
-        "react/jsx-curly-spacing": ["error", {
-          when: "never",
-          children: true,
-          attributes: {
-            allowMultiline: false
-          },
-          spacing: { objectLiterals: "never" }
-        }],
-        "react/jsx-curly-brace-presence": [
-          "error",
-          {
-            props: "never",
-            children: "never"
-          }
-        ],
-        "react/jsx-curly-newline": [
-          "error",
-          {
-            multiline: "consistent",
-            singleline: "consistent"
-          }
-        ],
-        "react/jsx-boolean-value": ["error", "never"],
-        "react/jsx-equals-spacing": ["error", "never"],
-        "react/jsx-sort-props": [
-          "error", {
-            callbacksLast: true
-          }
-        ],
-        "react/jsx-tag-spacing": [
-          "error",
-          {
-            closingSlash: "never",
-            beforeSelfClosing: "always",
-            afterOpening: "never",
-            beforeClosing: "never"
-          }
-        ],
-        "react/jsx-max-props-per-line": [
-          "error", {
-            maximum: 1,
-            when: "multiline"
-          }
-        ],
-        "react/jsx-wrap-multilines": [
-          "error",
-          {
-            declaration: "parens-new-line",
-            assignment: "parens-new-line",
-            return: "parens-new-line",
-            arrow: "parens-new-line",
-            condition: "parens-new-line",
-            logical: "parens-new-line",
-            prop: "parens-new-line"
-          }
-        ],
-        "react/jsx-one-expression-per-line": [
-          "error",
-          { allow: "single-child" }
-        ]
       }
     }
   ],

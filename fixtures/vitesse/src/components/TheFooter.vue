@@ -19,11 +19,15 @@ export default defineComponent({
     return () => {
       return (
         <nav flex="~ gap-4" justify-center mt-6 text-xl>
-          <RouterLink icon-btn title={t("button.home")} to="/">
+          <RouterLink
+            icon-btn
+            title={t("button.home")}
+            to="/">
             <div i-carbon-campsite />
           </RouterLink>
 
-          <button icon-btn title={t("button.toggle_dark")} onClick={toggleDark}>
+          <button
+            icon-btn title={t("button.toggle_dark")} onClick={toggleDark}>
             <div i="carbon-sun dark:carbon-moon" />
           </button>
 
@@ -41,7 +45,14 @@ export default defineComponent({
             title={t("button.about")}
             to="/about"
           >
-            <div i-carbon-dicom-overlay />
+            {
+              {
+                default() {
+                  return <div i-carbon-dicom-overlay >
+                  </div>;
+                }
+              }
+            }
           </RouterLink>
 
           <a

@@ -2,7 +2,7 @@
   "name": "@curev/eslint-config-monorepo",
   "version": "0.1.10",
   "private": true,
-  "packageManager": "pnpm@8.6.5",
+  "packageManager": "pnpm@8.6.9",
   "author": "Chizuki<chizukicn@outlook.com> (https://github.com/chizukicn/)",
   "license": "MIT",
   "homepage": "https://github.com/chizukicn/eslint-config",
@@ -15,12 +15,12 @@
   "devDependencies": {
     "@curev/eslint-config": "workspace:*",
     "@curev/eslint-plugin": "workspace:*",
-    "bumpp": "^8.2.1",
-    "eslint": "^8.42.0",
+    "bumpp": "^9.1.1",
+    "eslint": "^8.45.0",
     "lint-staged": "^13.2.3",
-    "rimraf": "^3.0.2",
+    "rimraf": "^5.0.1",
     "simple-git-hooks": "^2.8.1",
-    "typescript": "^5.1.3"
+    "typescript": "^5.1.6"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"

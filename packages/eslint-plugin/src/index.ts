@@ -18,7 +18,6 @@ export default {
       rules: {
         "@curev/if-newline": "error",
         "@curev/import-dedupe": "error",
-        "@curev/prefer-inline-type-import": "error",
         "@curev/generic-spacing": "error",
         "@curev/max-statements-per-line": "error"
       }
