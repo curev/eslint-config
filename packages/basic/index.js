@@ -325,9 +325,9 @@ module.exports = {
 
     "unicorn/prefer-trim-start-end": "error",
 
-    "unicorn/prefer-ternary": "error",
+    "unicorn/prefer-ternary": ["warn", "only-single-line"],
 
-    "unicorn/prefer-switch": "error",
+    "unicorn/prefer-switch": "warn",
 
     "unicorn/prefer-string-slice": "error",
 
@@ -356,7 +356,7 @@ module.exports = {
     // Use new when throwing error
     "unicorn/throw-new-error": "error",
 
-    "unicorn/no-array-push-push": "error",
+    "unicorn/no-array-push-push": "warn",
 
     "unicorn/no-lonely-if": "error",
 
