@@ -36,7 +36,8 @@ module.exports = {
     "html",
     "unicorn",
     "unused-imports",
-    "no-only-tests"
+    "no-only-tests",
+    "@unocss"
   ],
   settings: {
     "import/resolver": {
@@ -387,7 +388,10 @@ module.exports = {
 
     // yml
     "yml/quotes": ["error", { prefer: "single", avoidEscape: false }],
-    "yml/no-empty-document": "off"
+    "yml/no-empty-document": "off",
+
+    // unocss
+    "@unocss/blocklist": ["error"]
 
   }
 };
