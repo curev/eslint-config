@@ -5,7 +5,7 @@
   "packageManager": "pnpm@8.6.9",
   "author": "Chizuki<chizukicn@outlook.com> (https://github.com/chizukicn/)",
   "license": "MIT",
-  "homepage": "https://github.com/chizukicn/eslint-config",
+  "homepage": "https://github.com/curev/eslint-config",
   "scripts": {
     "lint": "eslint --cache .",
     "test": "pnpm -r run test",
