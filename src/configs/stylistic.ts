@@ -8,7 +8,8 @@ export const StylisticConfigDefaults: StylisticConfig = {
   quotes: "double",
   semi: true,
   braceStyle: "1tbs",
-  commaDangle: "never"
+  commaDangle: "never",
+  arrowParens: true
 };
 
 export async function stylistic(
