@@ -25,7 +25,7 @@
     "lint": "eslint --cache .",
     "test": "pnpm run test",
     "prepack": "nr build",
-    "prepare": "nr stub && pnpm simple-git-hooks",
+    "prepare": "pnpm simple-git-hooks",
     "bump": "bumpp --commit --push --tag"
   },
   "peerDependencies": {
