@@ -1,7 +1,7 @@
 {
   "name": "@curev/eslint-config",
   "type": "module",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "packageManager": "pnpm@8.6.9",
   "author": "Chizuki<chizukicn@outlook.com> (https://github.com/chizukicn/)",
   "license": "MIT",
