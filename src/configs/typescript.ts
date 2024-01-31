@@ -1,7 +1,7 @@
 import process from "node:process";
 import { GLOB_SRC, GLOB_TS, GLOB_TSX } from "../globs";
 import type { FlatConfigItem, OptionsComponentExts, OptionsFiles, OptionsOverrides, OptionsTypeScriptParserOptions, OptionsTypeScriptWithTypes } from "../types";
-import { pluginAntfu } from "../plugins";
+import { pluginCurev } from "../plugins";
 import { interopDefault, renameRules, toArray } from "../utils";
 
 export async function typescript(
@@ -81,7 +81,7 @@ export async function typescript(
       // Install the plugins without globs, so they can be configured separately.
       name: "curev:typescript:setup",
       plugins: {
-        curev: pluginAntfu,
+        curev: pluginCurev,
         ts: pluginTs as any
       }
     },

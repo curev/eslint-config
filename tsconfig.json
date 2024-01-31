@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "target": "es2020",
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
     "baseUrl": ".",
     "module": "es2020",
     "moduleResolution": "Bundler",

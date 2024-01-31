@@ -1,6 +1,6 @@
 import { interopDefault } from "../utils";
 import type { FlatConfigItem, OptionsOverrides, StylisticConfig } from "../types";
-import { pluginAntfu } from "../plugins";
+import { pluginCurev } from "../plugins";
 
 export const StylisticConfigDefaults: StylisticConfig = {
   indent: 2,
@@ -33,18 +33,19 @@ export async function stylistic(
     {
       name: "curev:stylistic",
       plugins: {
-        curev: pluginAntfu,
+        curev: pluginCurev,
         style: pluginStylistic
       },
       rules: {
         ...config.rules,
-
-        "antfu/consistent-list-newline": "error",
-        "antfu/if-newline": "error",
-        "antfu/top-level-function": "error",
+        "curev/consistent-list-newline": "error",
+        "curev/if-newline": "off",
+        "curev/top-level-function": "error",
         "semi-spacing": ["error", { before: false, after: true }],
         "style/brace-style": ["error", "1tbs", { allowSingleLine: true }],
         "curly": ["error", "all"],
+        "style/max-statements-per-line": ["off"],
+        "curev/max-statements-per-line": ["error", { max: 1 }],
         ...overrides
       }
     }

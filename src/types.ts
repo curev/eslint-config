@@ -22,7 +22,7 @@ import type {
 import type { RuleOptions as JSDocRules } from "@eslint-types/jsdoc/types";
 import type { RuleOptions as TypeScriptRules } from "@eslint-types/typescript-eslint/types";
 import type { RuleOptions as UnicornRules } from "@eslint-types/unicorn/types";
-import type { Rules as AntfuRules } from "eslint-plugin-antfu";
+import type { Rules as CurevRules } from "@curev/eslint-plugin";
 import type { StylisticCustomizeOptions, UnprefixedRuleOptions as StylisticRules } from "@stylistic/eslint-plugin";
 import type { VendoredPrettierOptions } from "./vender/prettier-types";
 
@@ -39,7 +39,7 @@ export type Rules = WrapRuleConfig<
     RenamePrefix<YmlRules, "yml/", "yaml/"> &
     RenamePrefix<NRules, "n/", "node/"> &
     Prefix<StylisticRules, "style/"> &
-    Prefix<AntfuRules, "antfu/"> &
+    Prefix<CurevRules, "curev/"> &
     ReactHooksRules &
     ReactRules &
     JSDocRules &

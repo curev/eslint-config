@@ -1,6 +1,6 @@
 import globals from "globals";
 import type { FlatConfigItem, OptionsIsInEditor, OptionsOverrides } from "../types";
-import { pluginAntfu, pluginUnusedImports } from "../plugins";
+import { pluginCurev, pluginUnusedImports } from "../plugins";
 import { GLOB_SRC, GLOB_SRC_EXT } from "../globs";
 
 export async function javascript(
@@ -37,7 +37,7 @@ export async function javascript(
       },
       name: "curev:javascript",
       plugins: {
-        "antfu": pluginAntfu,
+        "antfu": pluginCurev,
         "unused-imports": pluginUnusedImports
       },
       rules: {
