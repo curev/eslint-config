@@ -34,7 +34,7 @@ export async function react(
   ] as const);
 
   const isAllowConstantExport = ReactRefreshAllowConstantExportPackages.some(
-    i => isPackageExists(i)
+    (i) => isPackageExists(i)
   );
 
   return [

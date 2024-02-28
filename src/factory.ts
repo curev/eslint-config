@@ -62,7 +62,7 @@ export async function curev(
     svelte: enableSvelte = false,
     typescript: enableTypeScript = isPackageExists("typescript"),
     unocss: enableUnoCSS = false,
-    vue: enableVue = VuePackages.some(i => isPackageExists(i))
+    vue: enableVue = VuePackages.some((i) => isPackageExists(i))
   } = options;
 
   const stylisticOptions = options.stylistic === false
@@ -79,10 +79,10 @@ export async function curev(
 
   if (enableGitignore) {
     if (typeof enableGitignore !== "boolean") {
-      configs.push(interopDefault(import("eslint-config-flat-gitignore")).then(r => [r(enableGitignore)]));
+      configs.push(interopDefault(import("eslint-config-flat-gitignore")).then((r) => [r(enableGitignore)]));
     } else {
       if (fs.existsSync(".gitignore")) {
-        configs.push(interopDefault(import("eslint-config-flat-gitignore")).then(r => [r()]));
+        configs.push(interopDefault(import("eslint-config-flat-gitignore")).then((r) => [r()]));
       }
     }
   }

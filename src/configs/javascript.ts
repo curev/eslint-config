@@ -37,8 +37,15 @@ export async function javascript(
       },
       name: "curev:javascript",
       plugins: {
-        "antfu": pluginCurev,
+        "curev": pluginCurev,
         "unused-imports": pluginUnusedImports
+      },
+      settings: {
+        env: {
+          browser: true,
+          node: true,
+          es6: true
+        }
       },
       rules: {
         "no-var": "warn",

@@ -23,7 +23,7 @@
     "build": "unbuild",
     "stub": "unbuild --stub",
     "lint": "eslint --cache .",
-    "test": "pnpm run test",
+    "test": "vitest",
     "prepack": "nr build",
     "prepare": "pnpm simple-git-hooks",
     "bump": "bumpp --commit --push --tag"

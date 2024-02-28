@@ -57,7 +57,7 @@ export async function ensurePackages(packages: string[]) {
     return;
   }
 
-  const nonExistingPackages = packages.filter(i => !isPackageExists(i));
+  const nonExistingPackages = packages.filter((i) => !isPackageExists(i));
   if (nonExistingPackages.length === 0) {
     return;
   }
@@ -71,6 +71,6 @@ export async function ensurePackages(packages: string[]) {
     }
   ]);
   if (result) {
-    await import("@antfu/install-pkg").then(i => i.installPackage(nonExistingPackages, { dev: true }));
+    await import("@antfu/install-pkg").then((i) => i.installPackage(nonExistingPackages, { dev: true }));
   }
 }

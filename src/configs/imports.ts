@@ -15,9 +15,9 @@ export async function imports(options: OptionsStylistic = {}): Promise<FlatConfi
         import: pluginImport
       },
       rules: {
-        "antfu/import-dedupe": "error",
-        "antfu/no-import-dist": "error",
-        "antfu/no-import-node-modules-by-path": "error",
+        "curev/import-dedupe": "error",
+        "curev/no-import-dist": "error",
+        "curev/no-import-node-modules-by-path": "error",
 
         "import/first": "error",
         "import/no-duplicates": "error",
@@ -38,8 +38,8 @@ export async function imports(options: OptionsStylistic = {}): Promise<FlatConfi
       files: ["**/bin/**/*", `**/bin.${GLOB_SRC_EXT}`],
       name: "curev:imports:bin",
       rules: {
-        "antfu/no-import-dist": "off",
-        "antfu/no-import-node-modules-by-path": "off"
+        "curev/no-import-dist": "off",
+        "curev/no-import-node-modules-by-path": "off"
       }
     }
   ];

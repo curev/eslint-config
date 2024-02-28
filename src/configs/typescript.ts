@@ -15,7 +15,7 @@ export async function typescript(
 
   const files = options.files ?? [
     GLOB_SRC,
-    ...componentExts.map(ext => `**/*.${ext}`)
+    ...componentExts.map((ext) => `**/*.${ext}`)
   ];
 
   const filesTypeAware = options.filesTypeAware ?? [GLOB_TS, GLOB_TSX];
@@ -61,7 +61,7 @@ export async function typescript(
       languageOptions: {
         parser: parserTs,
         parserOptions: {
-          extraFileExtensions: componentExts.map(ext => `.${ext}`),
+          extraFileExtensions: componentExts.map((ext) => `.${ext}`),
           sourceType: "module",
           ...typeAware
             ? {
