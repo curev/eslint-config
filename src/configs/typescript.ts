@@ -1,6 +1,8 @@
 import process from "node:process";
-import { GLOB_SRC, GLOB_TS, GLOB_TSX } from "../globs";
+
 import type { FlatConfigItem, OptionsComponentExts, OptionsFiles, OptionsOverrides, OptionsTypeScriptParserOptions, OptionsTypeScriptWithTypes } from "../types";
+
+import { GLOB_SRC, GLOB_TS, GLOB_TSX } from "../globs";
 import { pluginCurev } from "../plugins";
 import { interopDefault, renameRules, toArray } from "../utils";
 

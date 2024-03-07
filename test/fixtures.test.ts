@@ -1,15 +1,16 @@
 import { join, resolve } from "node:path";
-import { afterAll, beforeAll, it } from "vitest";
-import fs from "fs-extra";
 import { execa } from "execa";
 import fg from "fast-glob";
+import fs from "fs-extra";
+import { afterAll, beforeAll, it } from "vitest";
+
 import type { FlatConfigItem, OptionsConfig } from "../src/types";
 
 beforeAll(async () => {
-  await fs.rm("_fixtures", { recursive: true, force: true });
+  await fs.rm("_fixtures", { force: true, recursive: true });
 });
 afterAll(async () => {
-  await fs.rm("_fixtures", { recursive: true, force: true });
+  await fs.rm("_fixtures", { force: true, recursive: true });
 });
 
 runWithConfig("js", {
@@ -17,24 +18,24 @@ runWithConfig("js", {
   vue: false
 });
 runWithConfig("all", {
+  svelte: true,
   typescript: true,
-  vue: true,
-  svelte: true
+  vue: true
 });
 runWithConfig("no-style", {
+  stylistic: false,
   typescript: true,
-  vue: true,
-  stylistic: false
+  vue: true
 });
 runWithConfig(
   "tab-double-quotes",
   {
-    typescript: true,
-    vue: true,
     stylistic: {
       indent: "tab",
       quotes: "double"
-    }
+    },
+    typescript: true,
+    vue: true
   },
   {
     rules: {
@@ -59,21 +60,21 @@ runWithConfig(
 runWithConfig(
   "with-formatters",
   {
+    formatters: true,
     typescript: true,
-    vue: true,
-    formatters: true
+    vue: true
   }
 );
 
 runWithConfig(
   "no-markdown-with-formatters",
   {
-    jsx: false,
-    vue: false,
-    markdown: false,
     formatters: {
       markdown: true
-    }
+    },
+    jsx: false,
+    markdown: false,
+    vue: false
   }
 );
 
@@ -104,11 +105,11 @@ export default curev(
     });
 
     const files = await fg("**/*", {
+      cwd: target,
       ignore: [
         "node_modules",
         "eslint.config.js"
-      ],
-      cwd: target
+      ]
     });
 
     await Promise.all(files.map(async (file) => {

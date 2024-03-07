@@ -1,4 +1,5 @@
 import type { FlatConfigItem } from "../types";
+
 import { pluginComments } from "../plugins";
 
 export async function comments(): Promise<FlatConfigItem[]> {

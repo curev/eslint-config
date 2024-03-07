@@ -1,7 +1,9 @@
-import process from "node:process";
 import fs from "node:fs";
+import process from "node:process";
 import { isPackageExists } from "local-pkg";
+
 import type { Awaitable, FlatConfigItem, OptionsConfig, UserConfigItem } from "./types";
+
 import {
   comments,
   ignores,
@@ -25,8 +27,8 @@ import {
   vue,
   yaml
 } from "./configs";
-import { combine, interopDefault } from "./utils";
 import { formatters } from "./configs/formatters";
+import { combine, interopDefault } from "./utils";
 
 const flatConfigProps: (keyof FlatConfigItem)[] = [
   "name",

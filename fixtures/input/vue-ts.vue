@@ -1,9 +1,10 @@
 <script setup lang="ts">
-// Define reactive data and props
 import { ref } from "vue";
 
+// Define reactive data and props
+
 const greeting = ref("Hello, Vue 3!");
-const counter = ref<number | string>(0);
+const counter = ref<number>(0);
 
 // Define a function
 function incrementCounter() {

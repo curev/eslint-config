@@ -1,15 +1,16 @@
-import { interopDefault } from "../utils";
 import type { FlatConfigItem, OptionsOverrides, StylisticConfig } from "../types";
+
 import { pluginCurev } from "../plugins";
+import { interopDefault } from "../utils";
 
 export const StylisticConfigDefaults: StylisticConfig = {
+  arrowParens: true,
+  braceStyle: "1tbs",
+  commaDangle: "never",
   indent: 2,
   jsx: true,
   quotes: "double",
-  semi: true,
-  braceStyle: "1tbs",
-  commaDangle: "never",
-  arrowParens: true
+  semi: true
 };
 
 export async function stylistic(
@@ -41,12 +42,12 @@ export async function stylistic(
         ...config.rules,
         "curev/consistent-list-newline": "error",
         "curev/if-newline": "off",
-        "curev/top-level-function": "error",
-        "semi-spacing": ["error", { before: false, after: true }],
-        "style/brace-style": ["error", "1tbs", { allowSingleLine: true }],
-        "curly": ["error", "all"],
-        "style/max-statements-per-line": ["off"],
         "curev/max-statements-per-line": ["error", { max: 1 }],
+        "curev/top-level-function": "error",
+        "curly": ["error", "all"],
+        "semi-spacing": ["error", { after: true, before: false }],
+        "style/brace-style": ["error", "1tbs", { allowSingleLine: true }],
+        "style/max-statements-per-line": ["off"],
         ...overrides
       }
     }

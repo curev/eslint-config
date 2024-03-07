@@ -1,5 +1,6 @@
 import type { FlatConfigItem } from "../types";
-import { pluginPerfectionist } from "../plugins";
+
+import { pluginPerfectionist } from "../plugins"; ;
 
 /**
  * Optional perfectionist plugin for props and items sorting.
@@ -9,9 +10,46 @@ import { pluginPerfectionist } from "../plugins";
 export async function perfectionist(): Promise<FlatConfigItem[]> {
   return [
     {
-      name: "curev:perfectionist",
       plugins: {
         perfectionist: pluginPerfectionist
+      },
+      rules: {
+        "perfectionist/sort-named-exports": [
+          "error",
+          {
+            order: "asc",
+            type: "natural"
+          }
+        ],
+        "perfectionist/sort-named-imports": [
+          "error",
+          {
+            order: "asc",
+            type: "natural"
+          }
+        ],
+        "perfectionist/sort-object-types": [
+          "error",
+          {
+            order: "asc",
+            type: "natural"
+          }
+        ],
+        "perfectionist/sort-objects": [
+          "error",
+          {
+            order: "asc",
+            type: "natural"
+          }
+        ],
+        "perfectionist/sort-union-types": [
+          "error",
+          {
+            order: "asc",
+            type: "natural"
+          }
+        ],
+        "sort-keys": "off"
       }
     }
   ];

@@ -1,6 +1,7 @@
-import { interopDefault } from "../utils";
 import type { FlatConfigItem, OptionsFiles, OptionsIsInEditor, OptionsOverrides } from "../types";
+
 import { GLOB_TESTS } from "../globs";
+import { interopDefault } from "../utils";
 
 export async function test(
   options: OptionsFiles & OptionsIsInEditor & OptionsOverrides = {}

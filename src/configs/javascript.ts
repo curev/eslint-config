@@ -1,7 +1,9 @@
 import globals from "globals";
+
 import type { FlatConfigItem, OptionsIsInEditor, OptionsOverrides } from "../types";
-import { pluginCurev, pluginUnusedImports } from "../plugins";
+
 import { GLOB_SRC, GLOB_SRC_EXT } from "../globs";
+import { pluginCurev, pluginUnusedImports } from "../plugins";
 
 export async function javascript(
   options: OptionsIsInEditor & OptionsOverrides = {}
@@ -40,38 +42,37 @@ export async function javascript(
         "curev": pluginCurev,
         "unused-imports": pluginUnusedImports
       },
-      settings: {
-        env: {
-          browser: true,
-          node: true,
-          es6: true
-        }
-      },
       rules: {
-        "no-var": "warn",
-        "object-shorthand": ["warn", "properties"],
-
-        "accessor-pairs": ["error", { setWithoutGet: true, enforceForClassMembers: true }],
+        "accessor-pairs": ["error", { enforceForClassMembers: true, setWithoutGet: true }],
         "array-callback-return": ["error", {
           allowImplicit: false,
           checkForEach: false
         }],
+
+        "block-scoped-var": "error",
         "camelcase": ["error", {
           allow: ["^UNSAFE_"],
-          properties: "never",
           ignoreGlobals: true,
-          ignoreImports: true
+          ignoreImports: true,
+          properties: "never"
         }],
         "constructor-super": "error",
         "default-case-last": "error",
         "eol-last": "error",
         "eqeqeq": ["error", "always", { null: "ignore" }],
         "func-call-spacing": ["error", "never"],
-        "generator-star-spacing": ["error", { before: true, after: true }],
+        "generator-star-spacing": ["error", { after: true, before: true }],
+        "import/export": "error",
+        "import/first": "error",
+        "import/no-absolute-path": ["error", { amd: false, commonjs: true, esmodule: true }],
+        "import/no-duplicates": "error",
+        "import/no-named-default": "error",
+        "import/no-webpack-loader-syntax": "error",
         "lines-between-class-members": ["error", "always", { exceptAfterSingleLine: true }],
         "multiline-ternary": ["error", "always-multiline"],
-        "new-cap": ["error", { newIsCap: true, capIsNew: false, properties: true }],
+        "new-cap": ["error", { capIsNew: false, newIsCap: true, properties: true }],
         "new-parens": "error",
+        "no-alert": "error",
         "no-array-constructor": "error",
         "no-async-promise-executor": "error",
         "no-caller": "error",
@@ -79,6 +80,7 @@ export async function javascript(
         "no-class-assign": "error",
         "no-compare-neg-zero": "error",
         "no-cond-assign": "error",
+        "no-console": ["error", { allow: ["warn", "error"] }],
         "no-const-assign": "error",
         "no-constant-condition": ["error", { checkLoops: false }],
         "no-control-regex": "error",
@@ -88,7 +90,6 @@ export async function javascript(
         "no-dupe-class-members": "error",
         "no-dupe-keys": "error",
         "no-duplicate-case": "error",
-        "no-useless-backreference": "error",
         "no-empty": ["error", { allowEmptyCatch: true }],
         "no-empty-character-class": "error",
         "no-empty-pattern": "error",
@@ -111,19 +112,25 @@ export async function javascript(
         "no-lone-blocks": "error",
         "no-loss-of-precision": "error",
         "no-misleading-character-class": "error",
-        "no-prototype-builtins": "error",
-        "no-useless-catch": "error",
         "no-mixed-operators": ["error", {
+          allowSamePrecedence: true,
           groups: [
             ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
             ["&&", "||"],
             ["in", "instanceof"]
-          ],
-          allowSamePrecedence: true
+          ]
         }],
         "no-mixed-spaces-and-tabs": "error",
         "no-multi-spaces": "error",
         "no-multi-str": "error",
+        "no-multiple-empty-lines": [
+          "error",
+          {
+            max: 3,
+            maxBOF: 0,
+            maxEOF: 1
+          }
+        ],
         "no-new": "error",
         "no-new-func": "error",
         "no-new-object": "error",
@@ -133,93 +140,9 @@ export async function javascript(
         "no-octal": "error",
         "no-octal-escape": "error",
         "no-proto": "error",
+        "no-prototype-builtins": "error",
         "no-redeclare": ["error", { builtinGlobals: false }],
         "no-regex-spaces": "error",
-        "no-return-assign": ["error", "except-parens"],
-        "no-self-assign": ["error", { props: true }],
-        "no-self-compare": "error",
-        "no-sequences": "error",
-        "no-shadow-restricted-names": "error",
-        "no-sparse-arrays": "error",
-        "no-tabs": "error",
-        "no-template-curly-in-string": "error",
-        "no-this-before-super": "error",
-        "no-throw-literal": "error",
-        "no-trailing-spaces": [
-          "error",
-          {
-            skipBlankLines: true
-          }
-        ],
-        "no-multiple-empty-lines": [
-          "error",
-          {
-            max: 3,
-            maxBOF: 0,
-            maxEOF: 1
-          }
-        ],
-        "no-undef": "error",
-        "no-undef-init": "error",
-        "no-unexpected-multiline": "error",
-        "no-unmodified-loop-condition": "error",
-        "no-unneeded-ternary": ["error", { defaultAssignment: false }],
-        "no-unreachable": "error",
-        "no-unreachable-loop": "error",
-        "no-unsafe-finally": "error",
-        "no-unsafe-negation": "error",
-        "no-unused-expressions": ["error", {
-          allowShortCircuit: true,
-          allowTernary: true,
-          allowTaggedTemplates: true
-        }],
-        "no-unused-vars": ["error", {
-          args: "none",
-          caughtErrors: "none",
-          ignoreRestSiblings: true,
-          vars: "all"
-        }],
-        "no-use-before-define": ["error", { functions: false, classes: false, variables: false }],
-        "no-useless-call": "error",
-        "no-useless-computed-key": "error",
-        "no-useless-constructor": "error",
-        "no-useless-escape": "error",
-        "no-useless-rename": "error",
-        "no-useless-return": "error",
-        "no-void": "error",
-        "no-with": "error",
-        "object-curly-newline": ["error", { multiline: true, consistent: true }],
-        "object-curly-spacing": ["error", "always"],
-        "object-property-newline": ["error", { allowMultiplePropertiesPerLine: true }],
-        "one-var": ["error", { initialized: "never" }],
-        "padded-blocks": ["error", { blocks: "never", switches: "never", classes: "never" }],
-        "prefer-const": ["error", { destructuring: "all" }],
-        "prefer-promise-reject-errors": "error",
-        "prefer-regex-literals": ["error", { disallowRedundantWrapping: true }],
-        "rest-spread-spacing": ["error", "never"],
-        "symbol-description": "error",
-        "template-curly-spacing": ["error", "never"],
-        "template-tag-spacing": ["error", "never"],
-        "unicode-bom": ["error", "never"],
-        "use-isnan": ["error", {
-          enforceForSwitchCase: true,
-          enforceForIndexOf: true
-        }],
-        "valid-typeof": ["error", { requireStringLiterals: true }],
-        "wrap-iife": ["error", "any", { functionPrototypeMethods: true }],
-        "yield-star-spacing": ["error", "both"],
-        "yoda": ["error", "never"],
-
-        "import/export": "error",
-        "import/first": "error",
-        "import/no-absolute-path": ["error", { esmodule: true, commonjs: true, amd: false }],
-        "import/no-duplicates": "error",
-        "import/no-named-default": "error",
-        "import/no-webpack-loader-syntax": "error",
-
-        "block-scoped-var": "error",
-        "no-alert": "error",
-        "no-console": ["error", { allow: ["warn", "error"] }],
         "no-restricted-globals": [
           "error",
           { message: "Use `globalThis` instead.", name: "global" },
@@ -241,6 +164,60 @@ export async function javascript(
           "TSEnumDeclaration[const=true]",
           "TSExportAssignment"
         ],
+        "no-return-assign": ["error", "except-parens"],
+        "no-self-assign": ["error", { props: true }],
+        "no-self-compare": "error",
+        "no-sequences": "error",
+        "no-shadow-restricted-names": "error",
+        "no-sparse-arrays": "error",
+        "no-tabs": "error",
+        "no-template-curly-in-string": "error",
+        "no-this-before-super": "error",
+        "no-throw-literal": "error",
+        "no-trailing-spaces": [
+          "error",
+          {
+            skipBlankLines: true
+          }
+        ],
+        "no-undef": "error",
+        "no-undef-init": "error",
+        "no-unexpected-multiline": "error",
+        "no-unmodified-loop-condition": "error",
+        "no-unneeded-ternary": ["error", { defaultAssignment: false }],
+        "no-unreachable": "error",
+        "no-unreachable-loop": "error",
+        "no-unsafe-finally": "error",
+        "no-unsafe-negation": "error",
+        "no-unused-expressions": ["error", {
+          allowShortCircuit: true,
+          allowTaggedTemplates: true,
+          allowTernary: true
+        }],
+        "no-unused-vars": ["error", {
+          args: "none",
+          caughtErrors: "none",
+          ignoreRestSiblings: true,
+          vars: "all"
+        }],
+        "no-use-before-define": ["error", { classes: false, functions: false, variables: false }],
+        "no-useless-backreference": "error",
+        "no-useless-call": "error",
+        "no-useless-catch": "error",
+        "no-useless-computed-key": "error",
+        "no-useless-constructor": "error",
+        "no-useless-escape": "error",
+        "no-useless-rename": "error",
+        "no-useless-return": "error",
+        "no-var": "warn",
+        "no-void": "error",
+        "no-with": "error",
+        "object-curly-newline": ["error", { consistent: true, multiline: true }],
+        "object-curly-spacing": ["error", "always"],
+        "object-property-newline": ["error", { allowMultiplePropertiesPerLine: true }],
+        "object-shorthand": ["warn", "properties"],
+        "one-var": ["error", { initialized: "never" }],
+        "padded-blocks": ["error", { blocks: "never", classes: "never", switches: "never" }],
         "prefer-arrow-callback": [
           "error",
           {
@@ -248,10 +225,16 @@ export async function javascript(
             allowUnboundThis: true
           }
         ],
+
+        "prefer-const": ["error", { destructuring: "all" }],
         "prefer-exponentiation-operator": "error",
+        "prefer-promise-reject-errors": "error",
+        "prefer-regex-literals": ["error", { disallowRedundantWrapping: true }],
         "prefer-rest-params": "error",
         "prefer-spread": "error",
+
         "prefer-template": "error",
+        "rest-spread-spacing": ["error", "never"],
         "sort-imports": [
           "error",
           {
@@ -262,15 +245,34 @@ export async function javascript(
             memberSyntaxSortOrder: ["none", "all", "multiple", "single"]
           }
         ],
-
+        "symbol-description": "error",
+        "template-curly-spacing": ["error", "never"],
+        "template-tag-spacing": ["error", "never"],
+        "unicode-bom": ["error", "never"],
         "unused-imports/no-unused-imports": isInEditor ? "off" : "error",
-
         "unused-imports/no-unused-vars": [
           "error",
           { args: "after-used", argsIgnorePattern: "^_", vars: "all", varsIgnorePattern: "^_" }
         ],
+        "use-isnan": ["error", {
+          enforceForIndexOf: true,
+          enforceForSwitchCase: true
+        }],
+        "valid-typeof": ["error", { requireStringLiterals: true }],
         "vars-on-top": "error",
+
+        "wrap-iife": ["error", "any", { functionPrototypeMethods: true }],
+
+        "yield-star-spacing": ["error", "both"],
+        "yoda": ["error", "never"],
         ...overrides
+      },
+      settings: {
+        env: {
+          browser: true,
+          es6: true,
+          node: true
+        }
       }
     },
     {

@@ -1,6 +1,7 @@
 import type { FlatConfigItem, OptionsStylistic } from "../types";
-import { pluginCurev, pluginImport } from "../plugins";
+
 import { GLOB_SRC_EXT } from "../globs";
+import { pluginCurev, pluginImport } from "../plugins";
 
 export async function imports(options: OptionsStylistic = {}): Promise<FlatConfigItem[]> {
   const {

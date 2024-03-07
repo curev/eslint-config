@@ -1,4 +1,5 @@
 import type { FlatConfigItem, OptionsFiles, OptionsOverrides, OptionsStylistic } from "../types";
+
 import { GLOB_TOML } from "../globs";
 import { interopDefault } from "../utils";
 
