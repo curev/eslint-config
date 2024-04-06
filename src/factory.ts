@@ -13,7 +13,6 @@ import {
   jsonc,
   markdown,
   node,
-  perfectionist,
   react,
   sortPackageJson,
   sortTsconfig,
@@ -104,10 +103,8 @@ export async function curev(
     imports({
       stylistic: stylisticOptions
     }),
-    unicorn(),
+    unicorn()
 
-    // Optional plugins (installed but not enabled by default)
-    perfectionist()
   );
 
   if (enableVue) {

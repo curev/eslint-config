@@ -6,7 +6,6 @@ export * from "./jsdoc";
 export * from "./jsonc";
 export * from "./markdown";
 export * from "./node";
-export * from "./perfectionist";
 export * from "./formatters";
 export * from "./react";
 export * from "./sort";
