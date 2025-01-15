@@ -15,17 +15,16 @@ export const defaultConfig: CurevOptions = {
       "style/comma-dangle": ["error", "only-multiline"],
       "style/brace-style": ["error", "1tbs"],
       "style/arrow-parens": ["error", "always"],
+      "style/multiline-ternary": ["error", "always-multiline"],
       "curly": ["error", "multi-line", "consistent"],
-      "style/no-mixed-operators": ["error", {
-        allowSamePrecedence: false
-      }],
-      "style/no-confusing-arrow": ["error", {
-        allowParens: true,
-        onlyOneSimpleParam: true
-      }]
-    },
+    }
   },
-  regexp: false,
+  unocss: {
+    overrides: {
+      "unocss/order": ["error"]
+    },
+    strict: true
+  }
 };
 
 export function curev(options: CurevOptions = {}, ...userConfigs: Awaitable<TypedFlatConfigItem | TypedFlatConfigItem[] | FlatConfigComposer<any, any> | Linter.Config[]>[]) {
