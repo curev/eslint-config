@@ -23,7 +23,6 @@
     "dev": "npx @eslint/config-inspector --config eslint.config.ts",
     "build:inspector": "pnpm build && npx @eslint/config-inspector build",
     "lint": "eslint --cache .",
-    "test": "vitest",
     "prepack": "nr build",
     "prepare": "pnpm simple-git-hooks",
     "bump": "bumpp --commit --push --tag",

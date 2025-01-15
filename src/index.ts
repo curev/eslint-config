@@ -2,12 +2,11 @@ import type { OptionsConfig, TypedFlatConfigItem } from "@antfu/eslint-config";
 import type { Linter } from "eslint";
 import type { Awaitable, FlatConfigComposer } from "eslint-flat-config-utils";
 import { antfu } from "@antfu/eslint-config";
-import defu from "defu";
 
 export type CurevOptions = OptionsConfig & Omit<TypedFlatConfigItem, "files">;
 
 export function curev(options: CurevOptions = {}, ...userConfigs: Awaitable<TypedFlatConfigItem | TypedFlatConfigItem[] | FlatConfigComposer<any, any> | Linter.Config[]>[]) {
-  return antfu(defu(<CurevOptions>{
+  return antfu(({
     stylistic: {
       indent: 2,
       semi: true,
@@ -17,7 +16,8 @@ export function curev(options: CurevOptions = {}, ...userConfigs: Awaitable<Type
         "style/brace-style": ["error", "1tbs"]
       },
     },
-  }, options), ...userConfigs);
+    ...options
+  }), ...userConfigs);
 }
 
 export default curev;

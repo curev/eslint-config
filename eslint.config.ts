@@ -2,7 +2,7 @@ import curev from "./src";
 
 export default curev({
   ignores: [
-    "fixtures",
+    "fixtures/input",
     "_fixtures",
   ]
 });
