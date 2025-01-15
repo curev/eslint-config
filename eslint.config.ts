@@ -1,3 +1,3 @@
 import curev from "./src";
 
-export default curev({});
+export default curev();
