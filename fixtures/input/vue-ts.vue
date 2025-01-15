@@ -1,26 +1,24 @@
-<script setup lang="ts">
-import { ref } from "vue";
-
-// Define reactive data and props
-
-const greeting = ref("Hello, Vue 3!");
-const counter = ref<number>(0);
-
-// Define a function
-function incrementCounter() {
-  counter.value++;
-}
-</script>
-
 <template>
   <div>
-    <h1>{{ greeting }}</h1>
-    <button @click="incrementCounter">
-      Click me!
+    <h1 >{{ greeting }}</h1>
+    <button @click="incrementCounter">Click me!
     </button>
     <p>Counter: {{ counter }}</p>
   </div>
 </template>
+
+<script setup lang="ts">
+// Define reactive data and props
+import { ref } from 'vue';
+
+const greeting = ref('Hello, Vue 3!');
+let counter = ref<number  | 1>(0);
+
+// Define a function
+const incrementCounter = () => {
+  counter.value++;
+};
+</script>
 
 <style>
 .a {  color:   red }

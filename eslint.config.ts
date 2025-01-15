@@ -1,3 +1,8 @@
 import curev from "./src";
 
-export default curev();
+export default curev({
+  ignores: [
+    "fixtures",
+    "_fixtures",
+  ]
+});

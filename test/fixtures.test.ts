@@ -1,84 +1,118 @@
+import type { OptionsConfig, TypedFlatConfigItem } from "@antfu/eslint-config";
+
 import { join, resolve } from "node:path";
 import { execa } from "execa";
 import fg from "fast-glob";
 import fs from "fs-extra";
+
 import { afterAll, beforeAll, it } from "vitest";
 
-import type { FlatConfigItem, OptionsConfig } from "../src/types";
-
 beforeAll(async () => {
-  await fs.rm("_fixtures", { force: true, recursive: true });
+  await fs.rm("_fixtures", { recursive: true, force: true });
 });
 afterAll(async () => {
-  await fs.rm("_fixtures", { force: true, recursive: true });
+  await fs.rm("_fixtures", { recursive: true, force: true });
 });
 
 runWithConfig("js", {
   typescript: false,
-  vue: false
+  vue: false,
 });
 runWithConfig("all", {
-  svelte: true,
   typescript: true,
-  vue: true
+  vue: true,
+  svelte: true,
+  astro: true,
 });
 runWithConfig("no-style", {
-  stylistic: false,
   typescript: true,
-  vue: true
+  vue: true,
+  stylistic: false,
 });
 runWithConfig(
   "tab-double-quotes",
   {
+    typescript: true,
+    vue: true,
     stylistic: {
       indent: "tab",
-      quotes: "double"
+      quotes: "double",
     },
-    typescript: true,
-    vue: true
   },
   {
     rules: {
-      "style/no-mixed-spaces-and-tabs": "off"
-    }
-  }
+      "style/no-mixed-spaces-and-tabs": "off",
+    },
+  },
 );
 
 // https://github.com/antfu/eslint-config/issues/255
 runWithConfig(
   "ts-override",
   {
-    typescript: true
+    typescript: true,
   },
   {
     rules: {
-      "ts/consistent-type-definitions": ["error", "type"]
-    }
-  }
+      "ts/consistent-type-definitions": ["error", "type"],
+    },
+  },
+);
+
+// https://github.com/antfu/eslint-config/issues/255
+runWithConfig(
+  "ts-strict",
+  {
+    typescript: {
+      tsconfigPath: "./tsconfig.json",
+    },
+  },
+  {
+    rules: {
+      "ts/no-unsafe-return": ["off"],
+    },
+  },
+);
+
+// https://github.com/antfu/eslint-config/issues/618
+runWithConfig(
+  "ts-strict-with-react",
+  {
+    typescript: {
+      tsconfigPath: "./tsconfig.json",
+    },
+    react: true,
+  },
+  {
+    rules: {
+      "ts/no-unsafe-return": ["off"],
+    },
+  },
 );
 
 runWithConfig(
   "with-formatters",
   {
-    formatters: true,
     typescript: true,
-    vue: true
-  }
+    vue: true,
+    astro: true,
+    formatters: true,
+  },
 );
 
 runWithConfig(
   "no-markdown-with-formatters",
   {
-    formatters: {
-      markdown: true
-    },
     jsx: false,
+    vue: false,
     markdown: false,
-    vue: false
-  }
+    formatters: {
+      markdown: true,
+    },
+  },
 );
 
-function runWithConfig(name: string, configs: OptionsConfig, ...items: FlatConfigItem[]) {
+function runWithConfig(name: string, configs: OptionsConfig, ...items: TypedFlatConfigItem[]) {
   it.concurrent(name, async ({ expect }) => {
     const from = resolve("fixtures/input");
     const output = resolve("fixtures/output", name);
@@ -87,7 +121,7 @@ function runWithConfig(name: string, configs: OptionsConfig, ...items: FlatConfi
     await fs.copy(from, target, {
       filter: (src) => {
         return !src.includes("node_modules");
-      }
+      },
     });
     await fs.writeFile(join(target, "eslint.config.js"), `
 // @eslint-disable
@@ -101,15 +135,15 @@ export default curev(
 
     await execa("npx", ["eslint", ".", "--fix"], {
       cwd: target,
-      stdio: "pipe"
+      stdio: "pipe",
     });
 
     const files = await fg("**/*", {
-      cwd: target,
       ignore: [
         "node_modules",
-        "eslint.config.js"
-      ]
+        "eslint.config.js",
+      ],
+      cwd: target,
     });
 
     await Promise.all(files.map(async (file) => {
@@ -117,9 +151,8 @@ export default curev(
       const source = await fs.readFile(join(from, file), "utf-8");
       const outputPath = join(output, file);
       if (content === source) {
-        if (fs.existsSync(outputPath)) {
-          fs.remove(outputPath);
-        }
+        if (fs.existsSync(outputPath))
+          await fs.remove(outputPath);
         return;
       }
       await expect.soft(content).toMatchFileSnapshot(join(output, file));
