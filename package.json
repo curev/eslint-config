@@ -27,7 +27,8 @@
     "prepack": "nr build",
     "prepare": "pnpm simple-git-hooks",
     "bump": "bumpp --commit --push --tag",
-    "up:deps": "taze major"
+    "up:deps": "taze major",
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "eslint": "^9.10.0"
