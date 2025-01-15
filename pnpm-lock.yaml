@@ -6,7 +6,7 @@ settings:
 
 overrides:
   '@eslint-community/eslint-utils': ^4.4.1
-  '@typescript-eslint/utils': ^8.19.1
+  '@typescript-eslint/utils': ^8.20.0
   eslint: ^9.18.0
   tsx: ^4.19.2
 
@@ -25,8 +25,8 @@ importers:
         specifier: ^23.2.0
         version: 23.2.0
       '@eslint/config-inspector':
-        specifier: ^0.7.1
-        version: 0.7.1(eslint@9.18.0(jiti@2.4.2))
+        specifier: ^1.0.0
+        version: 1.0.0(eslint@9.18.0(jiti@2.4.2))
       '@types/fs-extra':
         specifier: ^11.0.4
         version: 11.0.4
@@ -57,6 +57,9 @@ importers:
       simple-git-hooks:
         specifier: ^2.11.1
         version: 2.11.1
+      taze:
+        specifier: ^18.2.0
+        version: 18.2.0
       tsup:
         specifier: ^8.3.5
         version: 8.3.5(jiti@2.4.2)(postcss@8.5.1)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.6.1)
@@ -1935,8 +1938,8 @@ packages:
     resolution: {integrity: sha512-fo6Mtm5mWyKjA/Chy1BYTdn5mGJoDNjC7C64ug20ADsRDGrA85bN3uK3MaKbeRkRuuIEAR5N33Jr1pbm411/PA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@eslint/config-inspector@0.7.1':
-    resolution: {integrity: sha512-80+MJay0D/Kf2ImH04UOQtnL4141KviU0KNuT34xvQZ0TQ/aAfIzKnx4cc4lxIDOLi/ITCV3BxOQkHRrDULFQw==}
+  '@eslint/config-inspector@1.0.0':
+    resolution: {integrity: sha512-fzl4OHQazPSpsT5LIoE5qQV+8m48pdLN92lPdmIZJpQpD+kZmYC5JfxRilj5vcSaVmB9klJ8s81knNyC3hG7Eg==}
     hasBin: true
     peerDependencies:
       eslint: ^9.18.0
@@ -3004,7 +3007,7 @@ packages:
   '@vitest/eslint-plugin@1.1.25':
     resolution: {integrity: sha512-u8DpDnMbPcqBmJOB4PeEtn6q7vKmLVTLFMpzoxSAo0hjYdl4iYSHRleqwPQo0ywc7UV0S6RKIahYRQ3BnZdMVw==}
     peerDependencies:
-      '@typescript-eslint/utils': ^8.19.1
+      '@typescript-eslint/utils': ^8.20.0
       eslint: ^9.18.0
       typescript: '>= 5.0.0'
       vitest: '*'
@@ -6880,6 +6883,9 @@ packages:
   ofetch@1.1.1:
     resolution: {integrity: sha512-SSMoktrp9SNLi20BWfB/BnnKcL0RDigXThD/mZBeQxkIRv1xrd9183MtLdsqRYLYSqW0eTr5t8w8MqjNhvoOQQ==}
 
+  ofetch@1.4.1:
+    resolution: {integrity: sha512-QZj2DfGplQAr2oj9KzceK9Hwz6Whxazmn85yYeVuS3u9XTMOGMRx0kO95MQ+vLsj/S/NwBDMMLU5hpxvI6Tklw==}
+
   ohash@1.1.4:
     resolution: {integrity: sha512-FlDryZAahJmEF3VR3w1KogSEdWX3WhA5GPakFx4J81kEAiHyLMpdLLElS8n8dfNadMgAne/MywcvmogzscVt4g==}
 
@@ -8046,6 +8052,10 @@ packages:
 
   taze@0.11.2:
     resolution: {integrity: sha512-HM4chXXDaHCAl1AFbSlyHUFjoaEKTewVE0j6ni5S5mRdPdJdva4AfcmXgBZYnRBiJagl6QuVtsqLjqHUiiO20A==}
+    hasBin: true
+
+  taze@18.2.0:
+    resolution: {integrity: sha512-rjKW+/AJ8KTBl27cyCo6jtk6j9r3axN8olOOBhA12UciMLDXn79wZG09Nb3t1r51m1pqV8nOz98vKaFDerTe2g==}
     hasBin: true
 
   temp-dir@2.0.0:
@@ -10718,7 +10728,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@eslint/config-inspector@0.7.1(eslint@9.18.0(jiti@2.4.2))':
+  '@eslint/config-inspector@1.0.0(eslint@9.18.0(jiti@2.4.2))':
     dependencies:
       '@nodelib/fs.walk': 3.0.1
       bundle-require: 5.1.0(esbuild@0.24.2)
@@ -15742,7 +15752,6 @@ snapshots:
       tsx: 4.19.2
     transitivePeerDependencies:
       - supports-color
-    optional: true
 
   imurmurhash@0.1.4: {}
 
@@ -17166,6 +17175,12 @@ snapshots:
       node-fetch-native: 1.2.0
       ufo: 1.1.2
 
+  ofetch@1.4.1:
+    dependencies:
+      destr: 2.0.3
+      node-fetch-native: 1.6.4
+      ufo: 1.5.4
+
   ohash@1.1.4: {}
 
   on-finished@2.4.1:
@@ -18530,6 +18545,18 @@ snapshots:
       - bluebird
       - supports-color
 
+  taze@18.2.0:
+    dependencies:
+      '@antfu/ni': 23.2.0
+      js-yaml: 4.1.0
+      ofetch: 1.4.1
+      package-manager-detector: 0.2.8
+      tinyexec: 0.3.2
+      unconfig: 0.6.0
+      yargs: 17.7.2
+    transitivePeerDependencies:
+      - supports-color
+
   temp-dir@2.0.0: {}
 
   tempy@0.6.0:
@@ -18886,7 +18913,6 @@ snapshots:
       importx: 0.5.1
     transitivePeerDependencies:
       - supports-color
-    optional: true
 
   uncrypto@0.1.3: {}
 

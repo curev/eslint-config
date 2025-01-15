@@ -26,7 +26,8 @@
     "test": "vitest",
     "prepack": "nr build",
     "prepare": "pnpm simple-git-hooks",
-    "bump": "bumpp --commit --push --tag"
+    "bump": "bumpp --commit --push --tag",
+    "up:deps": "taze major"
   },
   "peerDependencies": {
     "eslint": "^9.10.0"
@@ -37,7 +38,7 @@
   },
   "devDependencies": {
     "@antfu/ni": "^23.2.0",
-    "@eslint/config-inspector": "^0.7.1",
+    "@eslint/config-inspector": "^1.0.0",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.17.13",
     "bumpp": "^9.10.1",
@@ -48,13 +49,14 @@
     "fs-extra": "^11.2.0",
     "lint-staged": "^15.3.0",
     "simple-git-hooks": "^2.11.1",
+    "taze": "^18.2.0",
     "tsup": "^8.3.5",
     "typescript": "^5.7.3",
     "vitest": "^2.1.8"
   },
   "resolutions": {
     "@eslint-community/eslint-utils": "^4.4.1",
-    "@typescript-eslint/utils": "^8.19.1",
+    "@typescript-eslint/utils": "^8.20.0",
     "eslint": "^9.18.0",
     "tsx": "^4.19.2"
   },
