@@ -19,13 +19,14 @@
   ],
   "scripts": {
     "build": "tsup --format esm,cjs --clean --dts",
-    "stub": "unbuild --stub",
+    "stub": "tsup --format esm",
+    "dev": "npx @eslint/config-inspector --config eslint.config.ts",
+    "build:inspector": "pnpm build && npx @eslint/config-inspector build",
     "lint": "eslint --cache .",
     "test": "vitest",
     "prepack": "nr build",
     "prepare": "pnpm simple-git-hooks",
-    "bump": "bumpp --commit --push --tag",
-    "inspect": "npx @eslint/config-inspector"
+    "bump": "bumpp --commit --push --tag"
   },
   "peerDependencies": {
     "eslint": "^9.10.0"
