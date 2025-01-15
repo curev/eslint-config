@@ -2,22 +2,37 @@ import type { OptionsConfig, TypedFlatConfigItem } from "@antfu/eslint-config";
 import type { Linter } from "eslint";
 import type { Awaitable, FlatConfigComposer } from "eslint-flat-config-utils";
 import { antfu } from "@antfu/eslint-config";
+import defu from "defu";
 
 export type CurevOptions = OptionsConfig & Omit<TypedFlatConfigItem, "files">;
 
-export function curev(options: CurevOptions = {}, ...userConfigs: Awaitable<TypedFlatConfigItem | TypedFlatConfigItem[] | FlatConfigComposer<any, any> | Linter.Config[]>[]) {
-  return antfu(({
-    stylistic: {
-      indent: 2,
-      semi: true,
-      quotes: "double",
-      overrides: {
-        "style/comma-dangle": ["error", "only-multiline"],
-        "style/brace-style": ["error", "1tbs"]
-      },
+export const defaultConfig: CurevOptions = {
+  stylistic: {
+    indent: 2,
+    semi: true,
+    quotes: "double",
+    overrides: {
+      "style/comma-dangle": ["error", "only-multiline"],
+      "style/brace-style": ["error", "1tbs"],
+      "style/arrow-parens": ["error", "always"],
+      "curly": ["error", "multi-line", "consistent"],
+      "style/no-mixed-operators": ["error", {
+        allowSamePrecedence: false
+      }],
+      "style/no-confusing-arrow": ["error", {
+        allowParens: true,
+        onlyOneSimpleParam: true
+      }]
     },
-    ...options
-  }), ...userConfigs);
+  },
+  regexp: false,
+};
+
+export function curev(options: CurevOptions = {}, ...userConfigs: Awaitable<TypedFlatConfigItem | TypedFlatConfigItem[] | FlatConfigComposer<any, any> | Linter.Config[]>[]) {
+  return antfu(defu(
+    options,
+    defaultConfig,
+  ), ...userConfigs);
 }
 
 export default curev;
