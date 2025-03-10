@@ -2,7 +2,7 @@
   "name": "@curev/eslint-config",
   "type": "module",
   "version": "0.4.2",
-  "packageManager": "pnpm@9.15.4",
+  "packageManager": "pnpm@9.15.9",
   "author": "Chizuki<chizukicn@outlook.com> (https://github.com/chizukicn/)",
   "license": "MIT",
   "homepage": "https://github.com/curev/eslint-config",
@@ -33,32 +33,33 @@
     "eslint": "^9.10.0"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^3.14.0",
+    "@antfu/eslint-config": "^4.8.1",
     "defu": "^6.1.4"
   },
   "devDependencies": {
-    "@antfu/ni": "^23.2.0",
-    "@eslint/config-inspector": "^1.0.0",
+    "@antfu/ni": "^23.3.1",
+    "@eslint/config-inspector": "^1.0.2",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.17.13",
-    "bumpp": "^9.10.1",
-    "eslint": "^9.18.0",
+    "@types/node": "^20.17.24",
+    "bumpp": "^10.0.3",
+    "eslint": "^9.22.0",
+    "eslint-flat-config-utils": "^2.0.1",
     "esno": "^4.8.0",
     "execa": "^9.5.2",
     "fast-glob": "^3.3.3",
-    "fs-extra": "^11.2.0",
-    "lint-staged": "^15.3.0",
+    "fs-extra": "^11.3.0",
+    "lint-staged": "^15.4.3",
     "simple-git-hooks": "^2.11.1",
-    "taze": "^18.2.0",
-    "tsup": "^8.3.5",
+    "taze": "^18.7.1",
+    "tsup": "^8.4.0",
     "typescript": "^5.7.3",
-    "vitest": "^2.1.8"
+    "vitest": "^3.0.8"
   },
   "resolutions": {
     "@eslint-community/eslint-utils": "^4.4.1",
-    "@typescript-eslint/utils": "^8.20.0",
-    "eslint": "^9.18.0",
-    "tsx": "^4.19.2"
+    "@typescript-eslint/utils": "^8.26.0",
+    "eslint": "^9.22.0",
+    "tsx": "^4.19.3"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
