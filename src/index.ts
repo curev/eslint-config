@@ -25,11 +25,12 @@ export const defaultConfig: CurevOptions = {
       "curly": ["error", "multi-line", "consistent"],
     }
   },
-  unocss: {
+  vue: {
     overrides: {
-      "unocss/order": ["error"]
-    },
-    strict: true
+      "vue/require-typed-ref": ["error"],
+      "vue/no-side-effects-in-computed-properties": ["error"],
+      "vue/no-ref-object-reactivity-loss": ["error"]
+    }
   }
 };
 
