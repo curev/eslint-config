@@ -24,12 +24,6 @@ export const defaultConfig: CurevOptions = {
       "style/multiline-ternary": ["error", "always-multiline"],
       "curly": ["error", "multi-line", "consistent"],
     }
-  },
-  unocss: {
-    overrides: {
-      "unocss/order": ["error"]
-    },
-    strict: true
   }
 };
 
