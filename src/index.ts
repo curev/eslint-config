@@ -24,13 +24,6 @@ export const defaultConfig: CurevOptions = {
       "style/multiline-ternary": ["error", "always-multiline"],
       "curly": ["error", "multi-line", "consistent"],
     }
-  },
-  vue: {
-    overrides: {
-      "vue/require-typed-ref": ["error"],
-      "vue/no-side-effects-in-computed-properties": ["error"],
-      "vue/no-ref-object-reactivity-loss": ["error"]
-    }
   }
 };
 
