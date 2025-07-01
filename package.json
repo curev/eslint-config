@@ -2,24 +2,25 @@
   "name": "@curev/eslint-config",
   "type": "module",
   "version": "0.5.0",
-  "packageManager": "pnpm@9.15.9",
+  "packageManager": "pnpm@10.12.4",
   "author": "Chizuki<chizukicn@outlook.com> (https://github.com/chizukicn/)",
   "license": "MIT",
   "homepage": "https://github.com/curev/eslint-config",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    }
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.cts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup --format esm,cjs --clean --dts",
-    "stub": "tsup --format esm",
+    "build": "tsdown",
     "dev": "npx @eslint/config-inspector --config eslint.config.ts",
     "build:inspector": "pnpm build && npx @eslint/config-inspector build",
     "lint": "eslint --cache .",
@@ -33,33 +34,33 @@
     "eslint": "^9.10.0"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^4.8.1",
+    "@antfu/eslint-config": "^4.16.1",
     "defu": "^6.1.4"
   },
   "devDependencies": {
-    "@antfu/ni": "^23.3.1",
-    "@eslint/config-inspector": "^1.0.2",
+    "@antfu/ni": "^25.0.0",
+    "@eslint/config-inspector": "^1.1.0",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.17.24",
-    "bumpp": "^10.0.3",
-    "eslint": "^9.22.0",
-    "eslint-flat-config-utils": "^2.0.1",
+    "@types/node": "^24.0.8",
+    "bumpp": "^10.2.0",
+    "eslint": "^9.30.0",
+    "eslint-flat-config-utils": "^2.1.0",
     "esno": "^4.8.0",
-    "execa": "^9.5.2",
+    "execa": "^9.6.0",
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.3.0",
-    "lint-staged": "^15.4.3",
-    "simple-git-hooks": "^2.11.1",
-    "taze": "^18.7.1",
-    "tsup": "^8.4.0",
-    "typescript": "^5.7.3",
-    "vitest": "^3.0.8"
+    "lint-staged": "^16.1.2",
+    "simple-git-hooks": "^2.13.0",
+    "taze": "^19.1.0",
+    "tsdown": "^0.12.9",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
   },
   "resolutions": {
-    "@eslint-community/eslint-utils": "^4.4.1",
-    "@typescript-eslint/utils": "^8.26.0",
-    "eslint": "^9.22.0",
-    "tsx": "^4.19.3"
+    "@eslint-community/eslint-utils": "^4.7.0",
+    "@typescript-eslint/utils": "^8.35.1",
+    "eslint": "^9.30.0",
+    "tsx": "^4.20.3"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
