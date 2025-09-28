@@ -24,7 +24,7 @@ export const defaultConfig: CurevOptions = {
       "style/multiline-ternary": ["error", "always-multiline"],
       "curly": ["error", "multi-line", "consistent"],
     }
-  }
+  },
 };
 
 export function curev(options: CurevOptions = {}, ...userConfigs: CurevUserConfig[]): CurevConfigs {
