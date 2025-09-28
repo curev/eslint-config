@@ -13,6 +13,7 @@ export type CurevConfigNames = ConfigNames;
 export type CurevConfigs = FlatConfigComposer<TypedFlatConfigItem, CurevConfigNames>;
 
 export const defaultConfig: CurevOptions = {
+  unocss: false,
   stylistic: {
     indent: 2,
     semi: true,
