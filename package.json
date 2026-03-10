@@ -2,7 +2,7 @@
   "name": "@curev/eslint-config",
   "type": "module",
   "version": "0.6.1",
-  "packageManager": "pnpm@10.30.1",
+  "packageManager": "pnpm@10.32.0",
   "author": "Chizuki<chizukicn@outlook.com> (https://github.com/chizukicn/)",
   "license": "MIT",
   "homepage": "https://github.com/curev/eslint-config",
@@ -34,25 +34,25 @@
     "eslint": "^9.10.0 || ^10.0.0"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^7.4.3",
+    "@antfu/eslint-config": "7.7.0",
     "defu": "^6.1.4",
-    "eslint-flat-config-utils": "^3.0.1"
+    "eslint-flat-config-utils": "^3.0.2"
   },
   "devDependencies": {
-    "@antfu/ni": "^28.2.0",
-    "@eslint/config-inspector": "^1.4.2",
-    "@types/node": "^25.3.0",
+    "@antfu/ni": "^28.3.0",
+    "@eslint/config-inspector": "^1.5.0",
+    "@types/node": "^25.4.0",
     "bumpp": "^10.4.1",
-    "eslint": "^10.0.1",
-    "lint-staged": "^16.2.7",
+    "eslint": "^10.0.3",
+    "lint-staged": "^16.3.2",
     "simple-git-hooks": "^2.13.1",
-    "taze": "^19.9.2",
-    "tsdown": "^0.20.3",
+    "taze": "^19.10.0",
+    "tsdown": "^0.21.1",
     "typescript": "^5.9.3",
     "vitest": "^4.0.18"
   },
   "resolutions": {
-    "eslint": "^10.0.1"
+    "eslint": "^10.0.3"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"

@@ -14,6 +14,7 @@ export type CurevConfigs = FlatConfigComposer<TypedFlatConfigItem, CurevConfigNa
 
 export const defaultConfig: CurevOptions = {
   unocss: false,
+  e18e: false,
   stylistic: {
     indent: 2,
     semi: true,
