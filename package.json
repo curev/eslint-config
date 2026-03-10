@@ -34,7 +34,7 @@
     "eslint": "^9.10.0 || ^10.0.0"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^7.4.3",
+    "@antfu/eslint-config": "7.7.0",
     "defu": "^6.1.4",
     "eslint-flat-config-utils": "^3.0.1"
   },
